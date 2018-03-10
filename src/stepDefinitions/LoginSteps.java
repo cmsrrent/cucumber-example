@@ -74,5 +74,12 @@ public class LoginSteps {
 	public void click_login() {
 		driver.findElement(By.id("MainContent_btnLogin")).click();		
 	}
+
+	@When("^the user enters \"(.*)\" and \"(.*)\"$")
+	public void user_enters_username_and_password(String username, String password) {
+		driver.findElement(By.id("MainContent_txtUserName")).sendKeys(username);
+		driver.findElement(By.id("MainContent_txtPassword")).sendKeys(password);
+		click_login();
+	}
 	
 }

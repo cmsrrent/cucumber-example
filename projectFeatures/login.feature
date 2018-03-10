@@ -27,8 +27,9 @@ Scenario: the user should be able to login
 	
 Scenario Outline: the user should be able to login
 	When the user enters "<username>" and "<password>"
-	Then the user should be able to view account balance
+	Then the user should be able to view their account balance
 	
 Examples:
 | username | password |
-|
+| tim@testemail.com | trpass |
+| lisa@testmail.com | lpass  |

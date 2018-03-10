@@ -1,9 +1,12 @@
 package stepDefinitions;
 
+import java.util.Map;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
@@ -80,6 +83,22 @@ public class LoginSteps {
 		driver.findElement(By.id("MainContent_txtUserName")).sendKeys(username);
 		driver.findElement(By.id("MainContent_txtPassword")).sendKeys(password);
 		click_login();
+	}
+	
+	@When("the user enters set of username and password")
+	public void user_enters_credentials(DataTable credentials) {
+		//extract data into a Map and iterate over a map
+		for (Map<String, String> data : credentials.asMaps(String.class, String.class)) {
+			// Parse map into local variables
+			String username = data.get("username");
+			String password = data.get("password");
+			
+			driver.findElement(By.id("MainContent_txtUserName")).clear();			
+			driver.findElement(By.id("MainContent_txtUserName")).sendKeys(username);
+			driver.findElement(By.id("MainContent_txtPassword")).clear();
+			driver.findElement(By.id("MainContent_txtPassword")).sendKeys(password);
+			click_login();
+		}
 	}
 	
 }

@@ -25,6 +25,7 @@ Scenario: the user should be able to login
 	And user clicks login
 	Then the user should be able to view their account balance
 	
+@ignore
 Scenario Outline: the user should be able to login
 	When the user enters "<username>" and "<password>"
 	Then the user should be able to view their account balance
@@ -33,3 +34,11 @@ Examples:
 | username | password |
 | tim@testemail.com | trpass |
 | lisa@testmail.com | lpass  |
+
+Scenario: after a failed attempt, the user should be able to login again
+	When the user enters set of username and password
+	| username | password |
+	| lisa@testmail.com | lpass  |
+	| tim@testemail.com | trpass |
+  Then the user should be able to view their account balance
+  

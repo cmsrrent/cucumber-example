@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="C:/dev/selenium/BDD/mockito-core-2.15.0.jar"/>
 	<classpathentry kind="lib" path="C:/dev/selenium/BDD/selenium-java-3.9.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/dev/selenium/BDD/selenium-server-standalone-3.8.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

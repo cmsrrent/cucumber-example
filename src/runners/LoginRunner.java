@@ -6,7 +6,11 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="projectFeatures", glue="stepDefinitions")
+@CucumberOptions(
+		features="projectFeatures", 
+		glue="stepDefinitions",
+		tags = {"@endtoend", "~@ignore"}
+		)
 public class LoginRunner {
 
 }

@@ -60,4 +60,19 @@ public class LoginSteps {
 		Assert.assertTrue(errorText.equals(invalidMessage));
 	}
 	
+	@When("^the user enters username as \"(.*)\"$")
+	public void enter_username(String username) {
+		driver.findElement(By.id("MainContent_txtUserName")).sendKeys(username);
+	}
+	
+	@And("^the user enters password as \"(.*)\"$")
+	public void enter_password(String password) {
+		driver.findElement(By.id("MainContent_txtPassword")).sendKeys(password);
+	}
+	
+	@And("user clicks login")
+	public void click_login() {
+		driver.findElement(By.id("MainContent_btnLogin")).click();		
+	}
+	
 }
